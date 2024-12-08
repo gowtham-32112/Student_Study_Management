@@ -20,11 +20,44 @@ header h1 {
     border-bottom: 2px solid #eaeaea;
 }
 
-.opportunities {
+section {
     margin-top: 20px;
 }
 
-.job {
+.create-opportunity form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.create-opportunity label {
+    font-weight: bold;
+}
+
+.create-opportunity input, .create-opportunity textarea, .create-opportunity button {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.create-opportunity textarea {
+    resize: none;
+}
+
+.create-opportunity button {
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.create-opportunity button:hover {
+    background-color: #005bb5;
+}
+
+.opportunities .job {
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     padding: 15px;
@@ -32,26 +65,34 @@ header h1 {
     border-radius: 5px;
 }
 
-.job h2 {
+.opportunities .job h2 {
     margin: 0;
     color: #0073e6;
 }
 
-.job p {
+.opportunities .job p {
     margin: 5px 0;
     color: #555;
 }
 
-.job a {
+.opportunities .job .apply-btn {
     display: inline-block;
     margin-top: 10px;
     padding: 8px 15px;
     background-color: #0073e6;
     color: white;
     text-decoration: none;
+    border: none;
     border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.job a:hover {
+.opportunities .job .apply-btn:hover {
     background-color: #005bb5;
+}
+
+.opportunities .job .apply-btn.applied {
+    background-color: #28a745;
+    cursor: not-allowed;
 }

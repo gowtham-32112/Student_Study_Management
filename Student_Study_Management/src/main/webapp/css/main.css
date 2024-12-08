@@ -1,0 +1,308 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo-header {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    gap: 10px;
+    text-align: center;
+}
+
+.logo {
+    width: 70px; 
+    height: auto;
+    border-radius: 25px; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+.logo-header span {
+    font-size: 1.7rem; 
+    color: white;
+    font-weight: bold;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.50;
+    color: #333;
+    background-color: #f4f4f9;
+}
+
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(to top right,#3C3D37,#3C3D37);
+    color: #fff;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background:#FEFFA7;
+    color: #03001C;
+}
+
+/* Section Styling */
+.section {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color:#000000;
+    position: relative;
+}
+
+.section h2::after {
+    content: '';
+    width: 80px;
+    height: 3px;
+    background: #ffcc00;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+}
+
+.section p {
+    font-size: 18px;
+    color: #555;
+    margin: 20px auto;
+    max-width: 800px;
+    line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to bottom right, #CB9DF0,#F0C1E1,#FDDBBB,#FFF9BF);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.cta-btn {
+    display: inline-block;
+    background:#CDC1FF;
+    color: #004d99;
+    font-weight: bold;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.cta-btn:hover {
+    background:#FFCCEA;
+    transform: scale(1.05);
+    color:#000000;
+}
+
+/* Courses Section */
+.courses {
+    background-color:#F0C1E1;
+    padding: 250px 20px;
+}
+
+.course-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.course-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0.5, 0, 0.5);
+    width: 800px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+.course-card h3 {
+    font-size: 24px;
+    color: #004d99;
+    margin-bottom: 10px;
+}
+
+.course-card p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Resources Section */
+.resources ul {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.resources ul li {
+    font-size: 18px;
+    color: #555;
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.resources ul li::before {
+    content: '✔';
+    color: #004d99;
+    position: absolute;
+    left: 0;
+    font-size: 16px;
+}
+
+/* Contact Section */
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact .form-group {
+    margin-bottom: 20px;
+}
+
+.contact label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.contact input, 
+.contact textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.contact textarea {
+    resize: none;
+}
+
+.contact button {
+    background:#000000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.contact button:hover {
+    background:#FFF9BF;
+    transform: scale(1.05);
+    color:#000000;
+}
+
+/* Footer */
+.footer {
+    background:#FFF9BF;
+    color:#000000;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer p {
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .hero h2 {
+        font-size: 36px;
+    }
+
+    .course-cards {
+        flex-direction: column;
+    }
+
+    .course-card {
+        width: 100%;
+    }
+}
+	

@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class SignUp {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)  // Auto-generated ID
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userid;
 
     @Column(name = "username", nullable = false)
@@ -18,6 +18,9 @@ public class SignUp {
 
     @Column(name = "password", nullable = false)
     private String password;
+
+    @Transient // This will not be persisted in the database
+    private String confirmPassword;
 
     // Getters and Setters
     public Long getUserId() {
@@ -50,6 +53,14 @@ public class SignUp {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
     }
 
     @Override

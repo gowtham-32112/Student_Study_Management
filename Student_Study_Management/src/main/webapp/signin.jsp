@@ -1,61 +1,26 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Sign In</title>
-    <link rel="stylesheet" href="css/signin.css" />
+    <link rel="stylesheet" href="css/signin.css"> <!-- Link to the CSS file -->
 </head>
 <body>
     <div class="loginWindow">
-        <div class="loginHeader">Sign In</div>
-        <div class="loginContent">
+        <h2 class="loginHeader">Sign In</h2>
+        <form class="loginContent" action="/signin/validate" method="post">
+            <input type="text" id="email" name="email" placeholder="Email" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <button type="submit" class="signinButton">Sign In</button>
+        </form>
 
-            <div style="display: block; padding-top: 20px;">Username*</div>
-            <input type="text" id="T1" />
+        <!-- Display error message if login fails -->
+        <p id="ack">${errorMessage}</p>
 
-            <div style="display: block; padding-top: 20px;">Password*</div>
-            <input type="password" id="T2" />
-
-            <div style="display: block; padding-top: 10px; padding-bottom: 10px; text-align: right">
-                <label style="color: blue; cursor: pointer">Forgot Password</label>
-            </div>
-
-            <button class="signinButton" onClick="signIn()">Sign In</button>
-
-            <div style="display: block; height: 80px; line-height: 12px">
-                <label id="ack"></label>
-            </div>
-            <div style="display: block; text-align: center">Don't have an account?</div>
-            <label class="signupLabel" onClick="signUp()">SIGN UP NOW</label>
-
+        <!-- Links for Forgot Password and Sign Up -->
+        <div class="link-container">
+            <a href="/forgetpswd">Forgot Password?</a> | <a href="/signup">Sign Up Now</a>
         </div>
     </div>
 </body>
-<script type="text/javascript" src="js/main.js"></script>
-<script type="text/javascript">
-    function signIn() {
-        var data = JSON.stringify({
-            username: T1.value,
-            password: T2.value
-        });
-        var url = "http://localhost:8080/user/login"; // Make sure this is your login endpoint
-        callApi("POST", url, data, getResponse);
-    }
-
-    function getResponse(res) {
-        if (res == 401) {
-            ack.style.color = "red";
-            ack.innerHTML = "Invalid Credentials";
-        } else {
-            ack.innerHTML = "";
-            location.replace("/home");
-        }
-    }
-
-    function signUp() {
-        location.href = "/signup"; // Redirect to the signup page
-    }
-</script>
 </html>

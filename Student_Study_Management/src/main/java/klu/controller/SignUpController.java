@@ -14,19 +14,20 @@ public class SignUpController {
     @Autowired
     private SignupManage signupManage;
 
-    @RequestMapping("/signup")
-    public String showSignupForm() {
-        return "signup";  // Display the signup form (signup.jsp)
-    }
+    
 
+    // Handle form submission
     @PostMapping("/signup/save")
     public String saveSignup(SignUp signUp, Model model) {
-        String message = signupManage.saveUser(signUp);  // Save the user
-        model.addAttribute("message", message);  // Display success/error message
+        String message = signupManage.saveUser(signUp);  // Save the user in the database
+
+        // If the user is successfully saved, redirect to the home page
         if (message.equals("User successfully added.")) {
-            return "redirect:/";  // Redirect to home page upon success
+            return "redirect:/home";  // Redirect to home.jsp
         } else {
-            return "signup";  // Stay on the signup page if there’s an error
+            // If there's an error, show the signup form with an error message
+            model.addAttribute("message", message);
+            return "signup";
         }
     }
 }

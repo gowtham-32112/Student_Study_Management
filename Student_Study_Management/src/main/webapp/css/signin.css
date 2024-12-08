@@ -1,7 +1,7 @@
 /* General body styling */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #87CEEB; /* Sky blue background */
+    background: linear-gradient(to bottom right, #FFB38E,#FFCF9D,#FFB26F,#DE8F5F);
     margin: 0;
     padding: 0;
     display: flex;
@@ -49,18 +49,6 @@ body {
     outline: none;
 }
 
-/* Forgot Password label */
-.loginContent label {
-    color: #007bff;
-    cursor: pointer;
-    font-size: 14px;
-    transition: color 0.3s ease;
-}
-
-.loginContent label:hover {
-    color: #0056b3; /* Darker blue on hover */
-}
-
 /* Sign-in button styling */
 .signinButton {
     background-color: #007bff; /* Button background */
@@ -79,25 +67,27 @@ body {
     background-color: #0056b3; /* Darker blue on hover */
 }
 
-/* Sign-up label */
-.signupLabel {
-    color: #007bff;
-    cursor: pointer;
-    font-size: 16px;
-    display: block;
-    margin-top: 20px;
-    transition: color 0.3s ease;
-}
-
-.signupLabel:hover {
-    color: #0056b3; /* Darker blue on hover */
-}
-
-/* Acknowledgement message */
+/* Error message for invalid credentials */
 #ack {
     color: #d9534f; /* Red for invalid credentials */
     font-size: 16px;
     margin-top: 10px;
+}
+
+/* Links for Forgot Password and Sign Up */
+.link-container {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.link-container a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.link-container a:hover {
+    color: #0056b3; /* Darker blue on hover */
 }
 
 /* Responsive design for mobile */
